@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num1">
+<input type="number" id="num2"><br>
+<br>
+<button value="0" type="button" id="add" onclick="ham(0)">Addition(+)</button>
+<button value="1" type="button" id="sub" onclick="ham(1)">Subtraction(-)</button>
+<button value="2" type="button" id="mul" onclick="ham(2)">Multiplication(x)</button>
+<button value="3" type="button" id="div" onclick="ham(3)">Division(/)</button>
+<br>
+Result <span id="result">
+<script>
+    function ham(operator){
+        let result=0;
+        let num1=parseFloat(document.getElementById("num1").value) ;
+        let num2=parseFloat(document.getElementById("num2").value);
+        switch (operator) {
+            case 0:
+                result=num1+num2;
+                break;
+            case 1:
+                result=num1-num2;
+                break;
+            case 2:
+                result=num1*num2;
+                break;
+            case 3:
+                if (num2===0){
+                    alert("Khi thuc hien phep chia, so thu 2 ko duoc bang 0");
+                    return;
+                }
+                result=num1/num2;
+                break;
+        }
+        document.getElementById("result").innerHTML= Ope(operator) + result;
+    }
+    function Ope(operator) {
+
+        let ope="";
+        switch (operator) {
+            case 0:
+                ope = "Addition: ";
+                break;
+            case 1:
+                ope = "Subtraction: ";
+                break;
+            case 2:
+                ope = "Multiplication: ";
+                break;
+            case 3:
+                ope = "Division: ";
+                break;
+        }
+        return ope;
+    }
+</script>
+</body>
+</html>
