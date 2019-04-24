@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../03-Session3/Lab/L1/css-E3.css">
+</head>
+<body>
+<h2>Calulator</h2>
+<input type="text" id="exprText" value=""><br>
+<br>
+<button type="button" value="" onclick="ham(this.value)">...</button>
+<button type="button" value="" onclick="ham(this.value)">...</button>
+<button type="button" value="" onclick="ham(this.value)">...</button>
+<button type="button" value="(" onclick="ham(this.value)">(</button>
+<button type="button" value=")" onclick="ham(this.value)">)</button>
+<button type="button" value="%" onclick="ham(this.value)">%</button>
+<button type="button" value="AC" onclick="AC()">AC</button>
+<br>
+<button type="button" value="Inv" onclick="ham(this.value)">Inv</button>
+<button type="button" value="sin(" onclick="ham(this.value)">sin</button>
+<button type="button" value="ln(" onclick="ham(this.value)">ln</button>
+<button class="number" type="button" value="7" onclick="ham(this.value)">7</button>
+<button class="number" type="button" value="8" onclick="ham(this.value)">8</button>
+<button class="number" type="button" value="9" onclick="ham(this.value)">9</button>
+<button type="button" value="/" onclick="ham(this.value)">÷</button>
+<br>
+<button type="button" value="pi" onclick="ham(this.value)">π</button>
+<button type="button" value="cos(" onclick="ham(this.value)">cos</button>
+<button type="button" value="log(" onclick="ham(this.value)">log</button>
+<button class="number" type="button" value="4" onclick="ham(this.value)">4</button>
+<button class="number" type="button" value="5" onclick="ham(this.value)">5</button>
+<button class="number" type="button" value="6" onclick="ham(this.value)">6</button>
+<button type="button" value="*" onclick="ham(this.value)">x</button>
+<br>
+<button type="button" value="e" onclick="ham(this.value)">e</button>
+<button type="button" value="tan(" onclick="ham(this.value)">tan</button>
+<button type="button" value="√(" onclick="ham(this.value)">√</button>
+<button class="number" type="button" value="1" onclick="ham(this.value)">1</button>
+<button class="number" type="button" value="2" onclick="ham(this.value)">2</button>
+<button class="number" type="button" value="3" onclick="ham(this.value)">3</button>
+<button type="button" value="-" onclick="ham(this.value)">-</button>
+<br>
+<button type="button" value="Ans" onclick="ham(this.value)">Ans</button>
+<button type="button" value="EXP" onclick="ham(this.value)">EXP</button>
+<button type="button" value="^" onclick="ham(this.value)">x^y</button>
+<button class="number" type="button" value="0" onclick="ham(this.value)">0</button>
+<button class="number" type="button" value="." onclick="ham(this.value)">.</button>
+<button id="equal" type="button" value="=" onclick="Equal()">=</button>
+<button type="button" value="+" onclick="ham(this.value)">+</button>
+
+<script>
+    function ham(operator) {
+        document.getElementById("exprText").value += operator;
+    }
+
+    function Equal() {
+
+
+        let result = document.getElementById("exprText").value;
+        result = eval(result);
+        document.getElementById("exprText").value = result;
+    }
+    function AC(){
+        document.getElementById("exprText").value="";
+    }
+
+</script>
+</body>
+</html>
